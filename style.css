@@ -271,7 +271,7 @@ right: 12px;
   background-image: url(img/bg_works.png);
   background-position: right 0 top 30%;
 	background-repeat: no-repeat;
-	background-size: 60% auto;
+	background-size: 80% auto;
 }
 .works_title {
   color: #ffffff;
@@ -280,6 +280,7 @@ right: 12px;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  padding-left: 2.3%;
 }
 .works_item {
   background-color: #ffffff;
@@ -291,8 +292,18 @@ right: 12px;
 .works_item a {
   width: 100%;
   height: auto;
+  display: inline-block;
+}
+.item_img {
+  overflow:hidden;
+  height: auto;
 }
 .item_img img {
   width: 100%;
   height: auto;
+  transition:.5s all;
+}
+.works_item:hover+.img{
+  transform:scale(1.2);
+  opacity: 0.8;
 }
