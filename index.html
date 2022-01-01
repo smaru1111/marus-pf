@@ -102,7 +102,7 @@
             <div class="works_item">
               <a href="#">
                 <div class="item_img">
-                  <img src="img/sample.jpg">
+                  <img src="img/sample.jpg" class="thumbnail">
                 </div>
                 <div class="item_explain">
                   <p>
@@ -114,7 +114,7 @@
             <div class="works_item">
               <a href="#">
                 <div class="item_img">
-                  <img src="img/sample.jpg">
+                  <img src="img/sample.jpg" class="thumbnail">
                 </div>
                 <div class="item_explain">
                   <p>
@@ -126,7 +126,7 @@
             <div class="works_item">
               <a href="#">
                 <div class="item_img">
-                  <img src="img/sample.jpg">
+                  <img src="img/sample.jpg" class="thumbnail">
                 </div>
                 <div class="item_explain">
                   <p>
@@ -138,7 +138,7 @@
             <div class="works_item">
               <a href="#">
                 <div class="item_img">
-                  <img src="img/sample.jpg">
+                  <img src="img/sample.jpg" class="thumbnail">
                 </div>
                 <div class="item_explain">
                   <p>
@@ -150,7 +150,7 @@
             <div class="works_item">
               <a href="#">
                 <div class="item_img">
-                  <img src="img/sample.jpg">
+                  <img src="img/sample.jpg" class="thumbnail">
                 </div>
                 <div class="item_explain">
                   <p>
@@ -162,7 +162,7 @@
             <div class="works_item">
               <a href="#">
                 <div class="item_img">
-                  <img src="img/sample.jpg">
+                  <img src="img/sample.jpg" class="thumbnail">
                 </div>
                 <div class="item_explain">
                   <p>
@@ -171,10 +171,35 @@
                 </div>
               </a>
             </div>
+
           </div>
         </div>
       </section>
       <section class="contact">
+        <div class="section_inner">
+          <div class="section_title contact_title">
+            <h2>
+              Contact
+            </h2>
+          </div> 
+          <div class="contact-form">
+            <form action="confirm.php" method="post" id="form">
+              <label for="form_name">
+                お名前
+              </label>
+              <input id="form_name" type="text" name="yourname" placeholder="石丸　颯大">
+              <label for="form_email">
+                メールアドレス
+              </label>
+              <input id="form_email" type="email" name="mail" placeholder="example@gmail.com">
+              <label for="form_message">
+                メッセージ
+              </label>
+              <textarea id="form_message" name="message" placeholder="メッセージをご記入ください"></textarea>
+              <input type="submit" value="送信" id="form_submit">
+            </form>
+          </div>
+        </div>
       </section>
 		</main>
 		<footer class="footer">
