@@ -79,6 +79,151 @@ a:link, a:visited, a:hover, a:active {
 .horizontal-nav_item a:hover {
   color: #2a2a2abb;
 }
+
+/*ハンバーガーメニュー*/
+/* 全体調整CSS */
+.hamburger-menubox *{
+	font-size: 16px;
+}
+.hamburger-menubox li{
+	font-size: 14px;
+}
+/* hamburgerここから */
+	/* input非表示 */
+.input-hidden{
+	display: none;
+}
+	/* label */
+.hamburger-switch{
+	cursor: pointer;
+	position: absolute;
+	right: 3%;
+	top: 0;
+	z-index: 9999;
+}
+/* メニュー展開時にハンバーガーアイコンを固定 */
+#hamburger-input:checked ~ .hamburger-switch{
+	position: fixed;
+}
+/* ハンバーガーアイコン */
+.hamburger-input-switch:before, .hamburger-switch-slide:before, .hamburger-switch-slide:after{
+	width: 25px;
+	height: 3px;
+	background: #333; /* ハンバーガーアイコンの色 */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transition: .3s;
+	content: "";
+}
+.hamburger-input-switch:before{
+		transform: translate(-50%, -50%);
+}
+.hamburger-switch-slide:before{
+	transform: translate(-50%, -300%);
+}
+.hamburger-switch-slide:after{
+	transform: translate(-50%, 200%);
+}
+/* メニューエリア */
+.hamburger-menuwrap{
+	position: fixed;
+	height: 100%;
+	background: #fafafa; /* メニューエリアの背景色 */
+	padding: 5em 3% 2em;
+	z-index: 9998;
+	transition: .3s;
+	overflow-y: scroll; /* メニューリストが多い場合に縦スクロール */
+	top: 0;
+	left: 100%;
+	width: 70%;
+}
+/* メニューリスト */
+.hamburger-menulist{
+	margin-right: 3%;
+	padding-left: 5% !important; /* !importantは不要な場合あり */
+	list-style: none;
+}
+.hamburger-menulist li a{
+	text-decoration: none;
+	color: #333; /* メニューリスト項目の文字色 */
+	display: block;
+	padding: .5em 0;
+}
+/* メニューエリアアニメーション */
+	/* 右から */
+#hamburger-input:checked ~ .hamburger-menuwrap{
+	left: 30%;
+}
+	/* コンテンツカバー */
+#hamburger-input:checked ~ .hamburger-cover{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 9997;
+	background: rgba(3,3,3,.5);
+	display: block;
+}
+/* 疾走感スタイリッシュ･デザイン */
+	/* 外側四角枠 */
+.hamburger-input-switch{
+	width: 3em;
+	height: 3em;
+	transform: translate(0% ,15%);
+	border: 1px solid #333;
+	overflow: hidden;
+}
+	/* ボーダースライド */
+.hamburger-input-switch:before, .hamburger-switch-slide:before, .hamburger-switch-slide:after{
+	transition: .2s;
+}
+.hamburger-switch-slide:before{
+	transition-delay: 0;
+}
+.hamburger-input-switch:before{
+	transition-delay: .1s;
+}
+.hamburger-switch-slide:after{
+	transition-delay: .2s;
+}
+#hamburger-input:checked ~ .hamburger-input-switch:before, #hamburger-input:checked ~ .hamburger-input-switch .hamburger-switch-slide:before, #hamburger-input:checked ~ .hamburger-input-switch .hamburger-switch-slide:after{
+	left: 500%;
+}
+	/* ×マークスライド */
+  .hamburger-input-switch:after{
+	content: "×";
+	font-size: 2.5em;
+	position: absolute;
+	top: 50%;
+	left: -500%;
+	transform: translate(-50%, -50%);
+	transition: .3s;
+}
+#hamburger-input:checked ~ .hamburger-input-switch:after{
+	left: 50%;
+}
+	/* メニューリストの矢印風ボーダー */
+.hamburger-menulist-slide li{
+	position: relative;
+  transition: all .2s linear;
+}
+.hamburger-menulist-slide a::before{
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 1em;
+	border: 1.5px solid;
+	border-color: transparent #333 #333 transparent;
+	left: 50%;
+	bottom: 0;
+	transform: skewx(45deg) translate(-50%, -50%);
+  transition: all .2s linear;
+}
+.hamburger-menulist-slide a:hover::before{
+  right: 3px;
+}
 /*ここからヘッダー*/
 .fv {
   width: 100%;
@@ -379,4 +524,26 @@ right: 12px;
 .copy-right {
   margin: 0;
   background-color: rgb(255, 255, 255);
+}
+@media screen and (max-width: 900px) {
+  .works {
+    background-size: auto 100%;
+  }
+}
+@media screen and (min-width: 769px) {
+  /*ハンバーガーメニュー*/
+  .hamburger-switch{
+		display: none;
+	}
+}
+@media screen and (max-width: 768px) {
+  /*ヘッダー*/
+  .header_nav {
+    display: none;
+  }
+  /*ここからファブ*/
+  .fav_text {
+    font-size: 8vw;
+  }
+
 }
